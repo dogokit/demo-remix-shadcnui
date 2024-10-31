@@ -10,9 +10,14 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div>
-      <h1>Demo Remix shadcn/ui</h1>
-      <Button>Demo</Button>
+    <div className="w-full max-w-xl mx-auto mt-10 space-y-10">
+      <header>
+        <h1 className="text-3xl font-medium">Demo Remix shadcn/ui</h1>
+      </header>
+
+      <main className="">
+        <Button>Demo</Button>
+      </main>
     </div>
   );
 }
