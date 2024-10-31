@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { TiptapStarterKitExample } from "~/components/demos/tiptap-starter";
+import { TiptapStarter } from "~/components/demos/tiptap-starter";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,13 +10,13 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="container-xl mt-10 space-y-10">
+    <div className="container-large mt-10 space-y-10">
       <header>
         <h1 className="text-3xl font-medium">Demo Remix shadcn/ui</h1>
       </header>
 
       <main className="">
-        <TiptapStarterKitExample />
+        <TiptapStarter />
       </main>
     </div>
   );

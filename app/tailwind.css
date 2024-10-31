@@ -96,8 +96,8 @@ body {
 }
 
 @layer utilities {
-  .container-xl {
-    @apply w-full max-w-xl mx-auto;
+  .container-large {
+    @apply w-full max-w-3xl mx-auto;
   }
 }
 

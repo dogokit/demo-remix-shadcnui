@@ -1,5 +1,3 @@
-"use client";
-
 import { BoldIcon } from "lucide-react";
 import React from "react";
 

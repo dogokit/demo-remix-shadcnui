@@ -1,4 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+import { StarterKit } from "@tiptap/starter-kit";
+
 import { Separator } from "~/components/ui/separator";
 import { BlockquoteToolbar } from "~/components/toolbars/blockquote";
 import { BoldToolbar } from "~/components/toolbars/bold";
@@ -14,7 +16,8 @@ import { StrikeThroughToolbar } from "~/components/toolbars/strikethrough";
 import { ToolbarProvider } from "~/components/toolbars/toolbar-provider";
 import { UndoToolbar } from "~/components/toolbars/undo";
 import { EditorContent, type Extension, useEditor } from "@tiptap/react";
-import { StarterKit } from "@tiptap/starter-kit";
+import { SearchAndReplace } from "~/components/extensions/search-and-replace";
+import { SearchAndReplaceToolbar } from "~/components/toolbars/search-and-replace-toolbar";
 
 const extensions = [
   StarterKit.configure({
@@ -50,13 +53,14 @@ const extensions = [
       },
     },
   }),
+  SearchAndReplace,
 ];
 
 const content = `
 <h2 class="tiptap-heading" style="text-align: center">Hello world 🌍</h2>
 `;
 
-export const TiptapStarterKitExample = () => {
+export const TiptapStarter = () => {
   const editor = useEditor({
     extensions: extensions as Extension[],
     content,
@@ -84,6 +88,7 @@ export const TiptapStarterKitExample = () => {
             <HorizontalRuleToolbar />
             <BlockquoteToolbar />
             <HardBreakToolbar />
+            <SearchAndReplaceToolbar />
           </div>
         </ToolbarProvider>
       </div>
