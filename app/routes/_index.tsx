@@ -10,14 +10,18 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="container-large mt-10 space-y-10">
-      <header>
+    <div className="custom-container">
+      <header className="py-10">
         <h1 className="text-3xl font-medium">Demo Remix shadcn/ui</h1>
       </header>
 
-      <main className="">
+      <main>
         <TiptapStarter />
       </main>
+
+      <footer className="py-20">
+        <p>© Dogokit</p>
+      </footer>
     </div>
   );
 }

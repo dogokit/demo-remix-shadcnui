@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply custom-colors;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -96,8 +96,18 @@ body {
 }
 
 @layer utilities {
-  .container-large {
+  .custom-colors {
+    @apply bg-white dark:bg-gray-950;
+    @apply text-gray-950 dark:text-white;
+  }
+
+  .custom-container {
     @apply w-full max-w-3xl mx-auto;
+  }
+
+  .custom-prose {
+    @apply prose dark:prose-invert;
+    @apply prose-img:my-0;
   }
 }
 
