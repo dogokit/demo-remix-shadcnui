@@ -7,6 +7,8 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
+import { TooltipProvider } from "~/components/ui/tooltip";
+
 import "./tailwind.css";
 
 export const links: LinksFunction = () => [
@@ -31,8 +33,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen dark">
-        {children}
+      <body className="min-h-screen">
+        <TooltipProvider>{children}</TooltipProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
