@@ -105,8 +105,8 @@ export const DemoTiptapEditor = () => {
     <div className="border w-full relative rounded-md overflow-hidden pb-3">
       <div className="w-full py-2 px-2 justify-between border-b sticky top-0 left-0 bg-background z-20">
         <ToolbarProvider editor={editor}>
-          <section className="flex justify-between items-center gap-2">
-            <div className="flex items-center gap-1">
+          <section className="flex justify-between items-start gap-4">
+            <div className="flex items-center gap-1 flex-wrap">
               <UndoToolbar />
               <RedoToolbar />
               <Separator orientation="vertical" className="h-8" />
@@ -124,7 +124,7 @@ export const DemoTiptapEditor = () => {
               <LinkURLToolbar />
               <ImagePlaceholderToolbar />
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 flex-wrap">
               <SearchAndReplaceToolbar />
             </div>
           </section>

@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="custom-container">
+    <div className="custom-container px-4">
       <header className="py-10 space-y-2">
         <h1 className="text-3xl font-medium">Demo Remix shadcn/ui</h1>
         <p>Various demos of shadcn/ui components on Remix (React Router).</p>
