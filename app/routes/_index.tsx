@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { DemoTiptapEditor } from "~/components/demos/demo-tiptap-editor";
+import { RichTextEditorTiptap } from "~/components/shared/rich-text-editor-tiptap";
 
 export const meta: MetaFunction = () => {
   return [
@@ -20,7 +20,7 @@ export default function Index() {
         <section className="space-y-2">
           <h2 className="text-2xl font-medium">Tiptap</h2>
           <p>Tiptap is a rich-text editor for the web.</p>
-          <DemoTiptapEditor />
+          <RichTextEditorTiptap />
         </section>
       </main>
 

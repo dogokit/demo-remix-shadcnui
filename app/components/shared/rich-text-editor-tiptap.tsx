@@ -96,7 +96,7 @@ const extensions = [
   SearchAndReplace,
 ];
 
-export const DemoTiptapEditor = () => {
+export const RichTextEditorTiptap = () => {
   const editor = useEditor({
     extensions: extensions as Extension[],
     content,
@@ -144,12 +144,9 @@ export const DemoTiptapEditor = () => {
         onKeyDown={() => {
           editor?.chain().focus().run();
         }}
-        className="cursor-text min-h-[18rem]"
+        className="flex min-h-[18rem] cursor-text justify-center"
       >
-        <EditorContent
-          editor={editor}
-          className="outline-none prose custom-prose"
-        />
+        <EditorContent editor={editor} className="outline-none custom-prose" />
       </div>
     </div>
   );
