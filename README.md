@@ -2,6 +2,7 @@
 
 - [Remix](https://remix.run/docs)
 - [shadcn/ui](https://github.com/shadcn/ui)
+  - [Shadcn Tiptap Search & Replace](https://tiptap.niazmorshed.dev)
 
 ## Development
 
