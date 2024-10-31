@@ -13,16 +13,16 @@ import { useToolbar } from "~/components/toolbars/toolbar-provider";
 const ImagePlaceholderToolbar = React.forwardRef<
   HTMLButtonElement,
   ButtonProps
->(({ className, onClick, children, ...props }, ref) => {
+>(({ className, onClick, ...props }, ref) => {
   const { editor } = useToolbar();
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <Button
           variant="ghost"
-          size="icon"
+          size="sm"
           className={cn(
-            "h-8 w-8",
+            "h-8 p-2",
             editor?.isActive("image-placeholder") && "bg-accent",
             className
           )}
@@ -33,7 +33,8 @@ const ImagePlaceholderToolbar = React.forwardRef<
           ref={ref}
           {...props}
         >
-          {children || <ImageIcon className="h-4 w-4" />}
+          <ImageIcon className="h-4 w-4" />
+          <span className="text-xs">Image</span>
         </Button>
       </TooltipTrigger>
       <TooltipContent>

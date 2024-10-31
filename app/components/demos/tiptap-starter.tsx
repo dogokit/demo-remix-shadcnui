@@ -2,6 +2,9 @@
 import { StarterKit } from "@tiptap/starter-kit";
 import { EditorContent, type Extension, useEditor } from "@tiptap/react";
 import { TextAlign } from "@tiptap/extension-text-align";
+import { Color } from "@tiptap/extension-color";
+import { Highlight } from "@tiptap/extension-highlight";
+import { TextStyle } from "@tiptap/extension-text-style";
 
 import { Separator } from "~/components/ui/separator";
 import { BlockquoteToolbar } from "~/components/toolbars/blockquote";
@@ -23,6 +26,7 @@ import { SearchAndReplaceToolbar } from "~/components/toolbars/search-and-replac
 import { ImageExtension } from "~/components/extensions/image";
 import { ImagePlaceholder } from "~/components/extensions/image-placeholder";
 import { ImagePlaceholderToolbar } from "~/components/toolbars/image-placeholder-toolbar";
+import { ColorHighlightToolbar } from "~/components/toolbars/color-and-highlight";
 
 const extensions = [
   StarterKit.configure({
@@ -58,12 +62,17 @@ const extensions = [
       },
     },
   }),
-  SearchAndReplace,
   TextAlign.configure({
     types: ["heading", "paragraph"],
   }),
+  TextStyle,
+  Color,
+  Highlight.configure({
+    multicolor: true,
+  }),
   ImageExtension,
   ImagePlaceholder,
+  SearchAndReplace,
 ];
 
 const content = `
@@ -86,10 +95,10 @@ export const TiptapStarter = () => {
       <div className="w-full py-2 px-2 justify-between border-b sticky top-0 left-0 bg-background z-20">
         <ToolbarProvider editor={editor}>
           <section className="flex justify-between items-center gap-2">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <UndoToolbar />
               <RedoToolbar />
-              <Separator orientation="vertical" className="h-7" />
+              <Separator orientation="vertical" className="h-8" />
               <BoldToolbar />
               <ItalicToolbar />
               <StrikeThroughToolbar />
@@ -100,9 +109,10 @@ export const TiptapStarter = () => {
               <HorizontalRuleToolbar />
               <BlockquoteToolbar />
               <HardBreakToolbar />
+              <ColorHighlightToolbar />
               <ImagePlaceholderToolbar />
             </div>
-            <div>
+            <div className="flex items-center gap-1">
               <SearchAndReplaceToolbar />
             </div>
           </section>
