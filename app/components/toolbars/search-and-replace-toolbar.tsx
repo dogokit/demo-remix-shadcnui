@@ -73,12 +73,12 @@ export function SearchAndReplaceToolbar() {
               className={cn("h-8 w-max px-3 font-normal")}
             >
               <Repeat className="mr-0 h-4 w-4" />
-              <span className="text-xs">Search & Replace</span>
+              <span className="text-xs">Search/Replace</span>
             </Button>
           </PopoverTrigger>
         </TooltipTrigger>
         <TooltipContent>
-          <span>Search & Replace</span>
+          <span>Search and Replace Text</span>
         </TooltipContent>
       </Tooltip>
 

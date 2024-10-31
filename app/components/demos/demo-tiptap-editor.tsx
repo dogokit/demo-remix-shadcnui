@@ -5,6 +5,7 @@ import { TextAlign } from "@tiptap/extension-text-align";
 import { Color } from "@tiptap/extension-color";
 import { Highlight } from "@tiptap/extension-highlight";
 import { TextStyle } from "@tiptap/extension-text-style";
+import { Link } from "@tiptap/extension-link";
 
 import { Separator } from "~/components/ui/separator";
 import { BlockquoteToolbar } from "~/components/toolbars/blockquote";
@@ -27,6 +28,15 @@ import { ImageExtension } from "~/components/extensions/image";
 import { ImagePlaceholder } from "~/components/extensions/image-placeholder";
 import { ImagePlaceholderToolbar } from "~/components/toolbars/image-placeholder-toolbar";
 import { ColorHighlightToolbar } from "~/components/toolbars/color-and-highlight";
+import { LinkURLToolbar } from "~/components/toolbars/link-url";
+
+const editorMode: "simple" | "complex" = "simple";
+const isSimple = editorMode === "simple";
+
+const content = `
+<h2 class="tiptap-heading">Hello world</h2>
+<p>Try interacting with the image below</p>
+`;
 
 const extensions = [
   StarterKit.configure({
@@ -62,6 +72,11 @@ const extensions = [
       },
     },
   }),
+  Link.configure({
+    openOnClick: false,
+    autolink: true,
+    defaultProtocol: "https",
+  }),
   TextAlign.configure({
     types: ["heading", "paragraph"],
   }),
@@ -75,12 +90,7 @@ const extensions = [
   SearchAndReplace,
 ];
 
-const content = `
-<h2 class="tiptap-heading">Hello world</h2>
-<p>Try interacting with the image below</p>
-`;
-
-export const TiptapStarter = () => {
+export const DemoTiptapEditor = () => {
   const editor = useEditor({
     extensions: extensions as Extension[],
     content,
@@ -90,6 +100,7 @@ export const TiptapStarter = () => {
   if (!editor) {
     return null;
   }
+
   return (
     <div className="border w-full relative rounded-md overflow-hidden pb-3">
       <div className="w-full py-2 px-2 justify-between border-b sticky top-0 left-0 bg-background z-20">
@@ -104,12 +115,13 @@ export const TiptapStarter = () => {
               <StrikeThroughToolbar />
               <BulletListToolbar />
               <OrderedListToolbar />
-              <CodeToolbar />
-              <CodeBlockToolbar />
+              {!isSimple && <CodeToolbar />}
+              {!isSimple && <CodeBlockToolbar />}
               <HorizontalRuleToolbar />
               <BlockquoteToolbar />
               <HardBreakToolbar />
               <ColorHighlightToolbar />
+              <LinkURLToolbar />
               <ImagePlaceholderToolbar />
             </div>
             <div className="flex items-center gap-1">
@@ -127,7 +139,7 @@ export const TiptapStarter = () => {
         }}
         className="cursor-text min-h-[18rem]"
       >
-        <EditorContent editor={editor} className="outline-none prose-config" />
+        <EditorContent editor={editor} className="outline-none custom-prose" />
       </div>
     </div>
   );

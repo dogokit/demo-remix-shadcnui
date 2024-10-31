@@ -145,9 +145,36 @@ body {
     @apply w-full max-w-3xl mx-auto;
   }
 
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
   .custom-prose {
-    @apply prose dark:prose-invert;
+    @apply prose prose-slate dark:prose-invert focus:outline-none;
     @apply prose-img:my-0;
+    @apply prose-headings:prose-heading-styles;
+    @apply prose-a:prose-a-styles;
+    @apply prose-pre:prose-pre-styles;
+    @apply prose-code:prose-code-styles;
+  }
+  .prose-heading-styles {
+    @apply font-semibold text-7xl;
+  }
+  .prose-a-styles {
+    @apply focus-ring cursor-pointer rounded-sm transition;
+    @apply text-primary hover:text-primary/75;
+  }
+  .prose-pre-styles {
+    @apply bg-muted text-foreground;
+  }
+  .prose-code-styles {
+    @apply before:content-none after:content-none;
+  }
+  .prose > ul > li > p {
+    @apply my-0;
+  }
+  .prose > ol > li > p {
+    @apply my-0;
   }
 }
 

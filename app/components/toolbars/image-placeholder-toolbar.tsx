@@ -38,7 +38,7 @@ const ImagePlaceholderToolbar = React.forwardRef<
         </Button>
       </TooltipTrigger>
       <TooltipContent>
-        <span>Image</span>
+        <span>Upload or Embed Image</span>
       </TooltipContent>
     </Tooltip>
   );
