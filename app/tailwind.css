@@ -170,12 +170,6 @@ body {
   .prose-code-styles {
     @apply before:content-none after:content-none;
   }
-  .prose > ul > li > p {
-    @apply my-0;
-  }
-  .prose > ol > li > p {
-    @apply my-0;
-  }
 }
 
 .tiptap.ProseMirror {
@@ -224,4 +218,11 @@ h3.tiptap-heading + h2.tiptap-heading {
   border-left: 3px solid gray;
   margin: 1.5rem 0;
   padding-left: 1rem;
+}
+
+.tiptap > ul > li,
+.tiptap > ol > li,
+.tiptap > ul > li > p,
+.tiptap > ol > li > p {
+  @apply my-0;
 }
